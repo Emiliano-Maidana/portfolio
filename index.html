@@ -208,7 +208,7 @@
       font-size: 0.95rem;
     }
 
-    /* SECCIÓN DE PROYECTOS (Tu galería original) */
+    /* SECCIÓN DE PROYECTOS */
     .projects-section {
       padding: 6rem 2rem;
       max-width: 1200px;
@@ -231,13 +231,22 @@
       line-height: 1.6;
     }
 
-    /* Estilos originales de la galería y modal (ligeramente ajustados) */
+    /* GALERÍA DE PROYECTOS - CORREGIDO */
     section.project-gallery {
       min-height: auto;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
       opacity: 1;
       transform: none;
-      align-items: stretch;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    section.project-gallery:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
     }
 
     section.project-gallery h2 {
@@ -248,11 +257,14 @@
       width: 100%;
     }
 
+    /* CORRECCIÓN 1: TEXTO CENTRADO */
     section.project-gallery p {
       text-align: center;
       max-width: 800px;
-      margin-bottom: 2.5rem;
+      margin: 0 auto 2.5rem auto;
       color: var(--text-light);
+      line-height: 1.7;
+      font-size: 1.1rem;
     }
 
     .gallery {
@@ -263,9 +275,10 @@
       width: 100%;
     }
 
+    /* CORRECCIÓN 2: RESPONSIVE FLEXIBLE */
     .gallery img {
-      width: 100%;
-      max-width: 300px;
+      flex: 1 1 280px; /* Se expande, encoge, con base de 280px */
+      max-width: 100%;
       height: 220px;
       object-fit: cover;
       border-radius: 12px;
@@ -281,7 +294,7 @@
       box-shadow: 0 8px 25px var(--accent-glow);
     }
 
-    /* MODAL (igual que antes) */
+    /* MODAL */
     .modal {
       position: fixed;
       top: 0;
@@ -402,23 +415,60 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* RESPONSIVE - CORREGIDO */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
       .hero .tagline { font-size: 1.1rem; padding: 0 1rem; }
       nav ul { gap: 1.2rem; }
       nav a { font-size: 0.9rem; }
-      .modal-content { flex-direction: column; width: 95%; }
-      .modal-content img, .modal-text { width: 100%; }
-      .modal-text { padding: 1.8rem; }
+      
+      /* Modal en columna en móviles */
+      .modal-content { 
+        flex-direction: column; 
+        width: 95%;
+        max-height: 90vh;
+      }
+      .modal-content img, .modal-text { 
+        width: 100%; 
+      }
+      .modal-content img {
+        height: 200px;
+        object-fit: cover;
+      }
+      .modal-text { 
+        padding: 1.8rem; 
+        max-height: 50vh;
+        overflow-y: auto;
+      }
+      
       .achievement-card { padding: 2rem 1.5rem; }
+      
+      /* Asegurar que las imágenes en galería sean más grandes en móviles */
+      .gallery img {
+        flex: 1 1 100%; /* Ocupa casi todo el ancho */
+        max-width: 400px;
+      }
     }
 
     @media (max-width: 480px) {
-      header { padding: 1rem; flex-direction: column; gap: 1rem; }
-      nav ul { gap: 1rem; }
-      .hero { padding: 7rem 1.5rem 3rem; }
+      header { 
+        padding: 1rem; 
+        flex-direction: column; 
+        gap: 1rem; 
+        text-align: center;
+      }
+      nav ul { 
+        gap: 1rem; 
+        justify-content: center;
+      }
+      .hero { 
+        padding: 8rem 1.5rem 3rem; /* Más padding arriba por el header */
+      }
       .hero h1 { font-size: 2.2rem; }
       .achievements-grid { grid-template-columns: 1fr; }
+      section.project-gallery {
+        padding: 3rem 0.5rem;
+      }
     }
   </style>
 </head>
@@ -450,7 +500,6 @@
     <div class="achievements-grid">
       <div class="achievement-card">
         <div class="achievement-icon">
-          <!-- Icono para Radio - Reemplaza con tu SVG -->
           <svg viewBox="0 0 24 24">
             <path d="M12 14v-4l5 2-5 2zm7-5v10h-14v-10h14zm-1-3h-12c-0.552 0-1 0.448-1 1v14c0 0.552 0.448 1 1 1h12c0.552 0 1-0.448 1-1v-14c0-0.552-0.448-1-1-1z"/>
           </svg>
@@ -461,7 +510,6 @@
       </div>
       <div class="achievement-card">
         <div class="achievement-icon">
-          <!-- Icono para Cine - Reemplaza con tu SVG -->
           <svg viewBox="0 0 24 24">
             <path d="M18 4l2 4h-3l-2-4h-2l2 4h-3l-2-4h-2l2 4h-3l-2-4h-1c-1.1 0-2 0.9-2 2v12c0 1.1 0.9 2 2 2h16c1.1 0 2-0.9 2-2v-12c0-1.1-0.9-2-2-2h-1z"/>
           </svg>
@@ -472,7 +520,6 @@
       </div>
       <div class="achievement-card">
         <div class="achievement-icon">
-          <!-- Icono para Diario - Reemplaza con tu SVG -->
           <svg viewBox="0 0 24 24">
             <path d="M19 3h-4.18c-0.42-1.16-1.52-2-2.82-2s-2.4 0.84-2.82 2h-4.18c-1.1 0-2 0.9-2 2v14c0 1.1 0.9 2 2 2h14c1.1 0 2-0.9 2-2v-14c0-1.1-0.9-2-2-2zm-7 0c0.55 0 1 0.45 1 1s-0.45 1-1 1-1-0.45-1-1 0.45-1 1-1zm-5 16h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm4 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2zm4 12h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
           </svg>
@@ -503,7 +550,7 @@
     <!-- SECCIÓN 2 -->
     <section class="project-gallery" id="sec2">
       <h2>Desarrollo web personalizado</h2>
-      <p>Transforma tus ideas en un sitio web atractivo y funcional. Nuestro servicio de desarrollo web personalizado se adapta a tus necesidades y objetivos...</p>
+      <p>Transforma tus ideas en un sitio web atractivo y funcional. Nuestro servicio de desarrollo web personalizado se adapta a tus necesidades y objetivos, asegurando una presencia en línea profesional y efectiva.</p>
       <div class="gallery">
         <img src="2a.png" alt="Desarrollo web 1">
         <img src="2b.png" alt="Desarrollo web 2">
@@ -514,7 +561,7 @@
     <!-- SECCIÓN 3 -->
     <section class="project-gallery" id="sec3">
       <h2>Administración de WordPress</h2>
-      <p>La administración de WordPress es esencial para mantener tu sitio web en óptimas condiciones. Incluye la gestión de actualizaciones, seguridad, y optimización del rendimiento.</p>
+      <p>La administración de WordPress es esencial para mantener tu sitio web en óptimas condiciones. Incluye la gestión de actualizaciones, seguridad, y optimización del rendimiento, garantizando que tu sitio siempre esté actualizado y seguro.</p>
       <div class="gallery">
         <img src="3a.png" alt="WordPress 1">
         <img src="3b.png" alt="WordPress 2">
@@ -558,7 +605,7 @@
     © 2025 teletexttt — Todos los derechos reservados.
   </footer>
 
-  <!-- MODAL (igual que antes) -->
+  <!-- MODAL -->
   <div class="modal" id="modal">
     <button class="close-btn" id="closeBtn">&times;</button>
     <div class="modal-content">
@@ -588,18 +635,28 @@
       });
     });
 
-    // Animación al hacer scroll (para las secciones de proyectos)
-    const sections = document.querySelectorAll(".project-gallery");
-    const reveal = () => {
-      sections.forEach(sec => {
+    // Animación al hacer scroll
+    const projectSections = document.querySelectorAll(".project-gallery");
+    const revealOnScroll = () => {
+      projectSections.forEach(sec => {
         const rect = sec.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) sec.classList.add("visible");
+        if (rect.top < window.innerHeight - 80) {
+          sec.style.opacity = 1;
+          sec.style.transform = 'translateY(0)';
+        }
       });
     };
-    window.addEventListener("scroll", reveal);
-    reveal();
+    // Inicializar opacidad
+    projectSections.forEach(sec => {
+      sec.style.opacity = 0;
+      sec.style.transform = 'translateY(20px)';
+      sec.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    });
+    
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
 
-    // Modal logic (igual que antes)
+    // Modal logic
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modalImg");
     const modalText = document.getElementById("modalText");
@@ -649,3 +706,4 @@
   </script>
 </body>
 </html>
+
