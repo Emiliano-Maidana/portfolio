@@ -3,26 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emiliano Maidana Portfolio</title>
-  <!-- Open Graph / Facebook (Facebook, LinkedIn, Discord) -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://teletexttt.github.io/portfolio/">
-<meta property="og:title" content="Emiliano Maidana Portfolio">
-<meta property="og:description" content="Construyo experiencias digitales a medida, desde webs dinámicas hasta videojuegos inmersivos.">
-<meta property="og:image" content="https://teletexttt.github.io/portfolio/assets/img/social-preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://teletexttt.github.io/portfolio/">
-<meta name="twitter:title" content="Emiliano Maidana Portfolio">
-<meta name="twitter:description" content="Construyo experiencias digitales a medida, desde webs dinámicas hasta videojuegos inmersivos.">
-<meta name="twitter:image" content="https://teletexttt.github.io/portfolio/assets/img/social-preview.jpg">
-<meta name="twitter:image:alt" content="Portfolio de Emiliano Maidana Portfolio">
-
-<!-- Otros metadatos importantes -->
-<meta name="description" content="Portfolio profesional de Emiliano Maidana. Desarrollo web, diseño gráfico y creación de videojuegos.">
+  <title>Emiliano Maidana | Desarrollo y Diseño</title>
+  
+  <!-- ========== FAVICON ========== -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2300ff9d%22>E</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2300ff9d%22>E</text></svg>">
+  
+  <!-- ========== OPEN GRAPH / REDES SOCIALES ========== -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://teletexttt.github.io/portfolio/">
+  <meta property="og:title" content="Emiliano Maidana | Desarrollador y Diseñador">
+  <meta property="og:description" content="Construyo experiencias digitales a medida, desde webs dinámicas hasta videojuegos inmersivos.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/teletexttt/portfolio/main/social-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://teletexttt.github.io/portfolio/">
+  <meta name="twitter:title" content="Emiliano Maidana | Desarrollador y Diseñador">
+  <meta name="twitter:description" content="Construyo experiencias digitales a medida, desde webs dinámicas hasta videojuegos inmersivos.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/teletexttt/portfolio/main/social-preview.jpg">
+  <meta name="twitter:image:alt" content="Portfolio de Emiliano Maidana - Desarrollador y Diseñador">
+  
+  <!-- Descripción general para SEO -->
+  <meta name="description" content="Portfolio profesional de Emiliano Maidana. Desarrollo web, diseño gráfico y creación de videojuegos.">
+  
   <style>
     :root {
       --bg: #0f0f0f;
@@ -250,7 +256,7 @@
       line-height: 1.6;
     }
 
-    /* GALERÍA DE PROYECTOS - CORREGIDO */
+    /* GALERÍA DE PROYECTOS */
     section.project-gallery {
       min-height: auto;
       padding: 4rem 1rem;
@@ -276,7 +282,6 @@
       width: 100%;
     }
 
-    /* CORRECCIÓN 1: TEXTO CENTRADO */
     section.project-gallery p {
       text-align: center;
       max-width: 800px;
@@ -294,9 +299,8 @@
       width: 100%;
     }
 
-    /* CORRECCIÓN 2: RESPONSIVE FLEXIBLE */
     .gallery img {
-      flex: 1 1 280px; /* Se expande, encoge, con base de 280px */
+      flex: 1 1 280px;
       max-width: 100%;
       height: 220px;
       object-fit: cover;
@@ -434,14 +438,13 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* RESPONSIVE - CORREGIDO */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
       .hero .tagline { font-size: 1.1rem; padding: 0 1rem; }
       nav ul { gap: 1.2rem; }
       nav a { font-size: 0.9rem; }
       
-      /* Modal en columna en móviles */
       .modal-content { 
         flex-direction: column; 
         width: 95%;
@@ -461,12 +464,7 @@
       }
       
       .achievement-card { padding: 2rem 1.5rem; }
-      
-      /* Asegurar que las imágenes en galería sean más grandes en móviles */
-      .gallery img {
-        flex: 1 1 100%; /* Ocupa casi todo el ancho */
-        max-width: 400px;
-      }
+      .gallery img { flex: 1 1 100%; max-width: 400px; }
     }
 
     @media (max-width: 480px) {
@@ -481,13 +479,11 @@
         justify-content: center;
       }
       .hero { 
-        padding: 8rem 1.5rem 3rem; /* Más padding arriba por el header */
+        padding: 8rem 1.5rem 3rem;
       }
       .hero h1 { font-size: 2.2rem; }
       .achievements-grid { grid-template-columns: 1fr; }
-      section.project-gallery {
-        padding: 3rem 0.5rem;
-      }
+      section.project-gallery { padding: 3rem 0.5rem; }
     }
   </style>
 </head>
@@ -560,9 +556,9 @@
       <h2>Experiencia digital</h2>
       <p>Transformamos tus ideas en realidad. En Teletextlab, somos apasionados por la tecnología y el diseño. Nuestro equipo se especializa en el desarrollo web, la administración de WordPress, la creación de videojuegos y el diseño gráfico. Trabajamos de la mano con nuestros clientes para convertir sus ideas en proyectos innovadores que impacten.</p>
       <div class="gallery">
-        <img src="1a.png" alt="Experiencia digital 1">
-        <img src="1b.png" alt="Experiencia digital 2">
-        <img src="1c.png" alt="Experiencia digital 3">
+        <img src="assets/img/proyectos/experiencia-digital/1a.jpg" alt="Experiencia digital 1">
+        <img src="assets/img/proyectos/experiencia-digital/1b.jpg" alt="Experiencia digital 2">
+        <img src="assets/img/proyectos/experiencia-digital/1c.jpg" alt="Experiencia digital 3">
       </div>
     </section>
 
@@ -571,9 +567,9 @@
       <h2>Desarrollo web personalizado</h2>
       <p>Transforma tus ideas en un sitio web atractivo y funcional. Nuestro servicio de desarrollo web personalizado se adapta a tus necesidades y objetivos, asegurando una presencia en línea profesional y efectiva.</p>
       <div class="gallery">
-        <img src="2a.png" alt="Desarrollo web 1">
-        <img src="2b.png" alt="Desarrollo web 2">
-        <img src="2c.png" alt="Desarrollo web 3">
+        <img src="assets/img/proyectos/desarrollo-web/2a.jpg" alt="Desarrollo web 1">
+        <img src="assets/img/proyectos/desarrollo-web/2b.jpg" alt="Desarrollo web 2">
+        <img src="assets/img/proyectos/desarrollo-web/2c.jpg" alt="Desarrollo web 3">
       </div>
     </section>
 
@@ -582,9 +578,9 @@
       <h2>Administración de WordPress</h2>
       <p>La administración de WordPress es esencial para mantener tu sitio web en óptimas condiciones. Incluye la gestión de actualizaciones, seguridad, y optimización del rendimiento, garantizando que tu sitio siempre esté actualizado y seguro.</p>
       <div class="gallery">
-        <img src="3a.png" alt="WordPress 1">
-        <img src="3b.png" alt="WordPress 2">
-        <img src="3c.png" alt="WordPress 3">
+        <img src="assets/img/proyectos/wordpress/3a.jpg" alt="WordPress 1">
+        <img src="assets/img/proyectos/wordpress/3b.jpg" alt="WordPress 2">
+        <img src="assets/img/proyectos/wordpress/3c.jpg" alt="WordPress 3">
       </div>
     </section>
 
@@ -593,9 +589,9 @@
       <h2>Creación de videojuegos</h2>
       <p>Sumérgete en el mundo de los videojuegos con nuestro servicio de creación de videojuegos. Desde la conceptualización hasta el lanzamiento, trabajamos contigo para desarrollar experiencias interactivas que cautiven a los jugadores.</p>
       <div class="gallery">
-        <img src="4a.png" alt="Videojuegos 1">
-        <img src="4b.png" alt="Videojuegos 2">
-        <img src="4c.png" alt="Videojuegos 3">
+        <img src="assets/img/proyectos/videojuegos/4a.jpg" alt="Videojuegos 1">
+        <img src="assets/img/proyectos/videojuegos/4b.jpg" alt="Videojuegos 2">
+        <img src="assets/img/proyectos/videojuegos/4c.jpg" alt="Videojuegos 3">
       </div>
     </section>
   </section>
@@ -665,7 +661,7 @@
         }
       });
     };
-    // Inicializar opacidad
+    
     projectSections.forEach(sec => {
       sec.style.opacity = 0;
       sec.style.transform = 'translateY(20px)';
